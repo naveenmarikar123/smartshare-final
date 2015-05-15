@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="90px"
+    android:layout_height="90px"
+    android:background="#99E6FF">
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="Icon"
+        android:textStyle="bold"
+        android:id="@+id/icon"
+        android:textSize="20sp"
+        android:layout_weight=".10" />
+
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="Item"
+        android:textStyle="bold"
+        android:id="@+id/name"
+        android:textSize="20sp"
+        android:layout_weight=".40"/>
+
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="Status"
+        android:textStyle="bold"
+        android:id="@+id/status"
+        android:textSize="20sp"
+        android:layout_weight=".4"/>
+
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="Call"
+        android:textStyle="bold"
+        android:id="@+id/call"
+        android:textSize="20sp"
+        android:layout_weight=".1"/>
+
+
+
+</LinearLayout>

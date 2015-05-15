@@ -22,6 +22,7 @@
             android:layout_centerHorizontal="true"
             android:text="You are now logged in"
             android:textSize="24sp"
+
             android:gravity="center"
             android:layout_marginTop="100dp"
             />

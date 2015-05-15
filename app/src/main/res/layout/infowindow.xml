@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="10dp"
+        android:id="@+id/info">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:text="Title"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ticon"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/title"
+            android:layout_toStartOf="@+id/title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:id="@+id/textView3"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/owner"
+            android:text="Owner: "
+            android:textColor="#000000"
+            android:layout_below="@+id/title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ownername"
+            android:text="Naveen"
+            android:textColor="#000000"
+            android:layout_below="@+id/title"
+            android:layout_toRightOf="@+id/owner"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/owner"
+            android:text="Owner Rating: "
+            android:textColor="#000000"
+            android:id="@+id/orate"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ownerrating"
+            android:textColor="#000000"
+            android:text="5"
+            android:layout_toRightOf="@+id/orate"
+            android:layout_below="@id/owner"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Description: "
+            android:textColor="#000000"
+            android:id="@+id/ides"
+            android:layout_below="@+id/orate"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_toRightOf="@+id/ides"
+            android:layout_below="@id/orate"
+            android:id="@+id/itemDescription"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ides"
+            android:text="Item Rating: "
+            android:id="@+id/irate"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/irate"
+            android:id="@+id/itemRating"
+            android:layout_below="@id/ides"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approximate Distance: "
+            android:id="@+id/iad"
+            android:textColor="#000000"
+            android:layout_below="@id/irate"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iad"
+            android:textColor="#000000"
+            android:id="@+id/aDistance"
+            android:layout_below="@id/itemRating"/>
+
+
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request"
+        android:textColor="#2196F3"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_below="@+id/info"
+        android:elevation="2dp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+</RelativeLayout>

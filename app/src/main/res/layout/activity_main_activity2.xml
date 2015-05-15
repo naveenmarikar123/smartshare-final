@@ -28,4 +28,6 @@
               android:name="com.example.naveenmarikar.smartshare1.NavigationDrawerFragment"
               tools:layout="@layout/fragment_navigation_drawer"/>
 
+
+
 </android.support.v4.widget.DrawerLayout>

@@ -1,31 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               xmlns:facebook="http://schemas.android.com/apk/res-auto"
                 android:orientation="vertical"
-    >
+                android:background="#ffffff"
+                >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal" >
-        <com.facebook.widget.ProfilePictureView
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageView"
+        android:background="#ffffff"
+        android:layout_alignBottom="@+id/selection_profile_pic"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+        <com.example.naveenmarikar.smartshare1.ProfilePictureView
             android:id="@+id/selection_profile_pic"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
             android:layout_gravity="center"
+
             android:gravity="center_horizontal"
-            facebook:preset_size="small" />
+            facebook:preset_size="small"
+            android:layout_alignParentTop="true"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
         <TextView
             android:id="@+id/selection_user_name"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_toEndOf="@+id/selection_profile_pic"
+            android:layout_toRightOf="@+id/selection_profile_pic"
+            android:layout_above="@+id/relativeLayout"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/ratingBar2"
+        style="?android:attr/ratingBarStyleSmall"
+        android:rating="4"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/ratingBar2"
+        android:id="@+id/googletext">
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:textColor="#333"
-            android:textSize="18sp" />
-    </LinearLayout>
-</LinearLayout>
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Find Your Item"
+            android:id="@+id/textView2"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_below="@+id/googletext"
+        android:id="@+id/relativeLayout"
+        android:background="#ffffff">
+
+        <!--<ExpandableListView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/expandableListView"
+            android:groupIndicator="@drawable/abc_list_selector_background_transition_holo_light"
+            android:background="#ffffff"/>
+         -->
+
+        <com.example.naveenmarikar.smartshare1.MapWrapperLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                          xmlns:tools="http://schemas.android.com/tools"
+                                                          android:id="@+id/map_relative_layout"
+                                                          android:layout_width="match_parent"
+                                                          android:layout_height="match_parent"
+                                                          tools:context=".MainActivity2" >
+
+
+
+        <com.google.android.gms.maps.MapView android:id="@+id/mapview"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="fill_parent" />
+        </com.example.naveenmarikar.smartshare1.MapWrapperLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

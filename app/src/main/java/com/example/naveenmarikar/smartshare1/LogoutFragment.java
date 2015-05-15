@@ -1,7 +1,6 @@
 package com.example.naveenmarikar.smartshare1;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -34,6 +33,6 @@ public class LogoutFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        ((MainActivity2) activity).onSectionAttached(2);
+        ((MainActivity2) activity).onSectionAttached(3);
     }
 }

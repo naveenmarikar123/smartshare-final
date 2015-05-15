@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.naveenmarikar.smartshare1"
-        minSdkVersion 10
+        minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -17,12 +17,48 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/notice.txt'
+    }
+
+
 }
-repositories { mavenCentral() }
+repositories { mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    // Google Play Services
+    compile 'com.google.android.gms:play-services:6.5.87'
+    // Support Libraries
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.facebook.android:facebook-android-sdk:3.21.1'
     compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.google.android.gms:play-services:6.5.87'
+    compile 'com.android.support:support-v4:22.0.0'
+    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile('com.mikepenz.materialdrawer:library:2.8.2@aar') {
+        transitive = true
+    }
+    compile 'com.quinny898.library.persistentsearch:library:1.0.0-SNAPSHOT'
+    compile 'com.androidmapsextensions:android-maps-extensions:2.2.0'
+    compile files('libs/commons-logging-1.2.jar')
+    compile files('libs/gson-2.3.1.jar')
+    compile files('libs/httpclient-4.4.jar')
+    compile files('libs/httpcore-4.4.jar')
+    compile files('libs/jackson-all-1.9.0.jar')
 }

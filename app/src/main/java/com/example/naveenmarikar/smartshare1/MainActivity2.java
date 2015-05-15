@@ -1,26 +1,35 @@
 package com.example.naveenmarikar.smartshare1;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.SearchView;
+
+import com.facebook.Session;
 
 
 public class MainActivity2 extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+
+    SearchView search;
+
+    public void finish(View view) {
+
+
+        finish();
+
+    }
+
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -35,16 +44,27 @@ public class MainActivity2 extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        int x = 1;
+
+        if(x == 1)
+        {
+            Intent intent = new Intent(this, FormActivity.class);
+            startActivity(intent);
+        }
+
         setContentView(R.layout.activity_main_activity2);
 
+
         mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
 
     }
 
@@ -61,11 +81,15 @@ public class MainActivity2 extends ActionBarActivity
                     .commit();
         } else if (position == 1){
             fragmentManager.beginTransaction()
-                    .replace(R.id.container, LogoutFragment.newInstance())
+                    .replace(R.id.container, Search.newInstance())
                     .commit();
         } else if(position == 2){
             fragmentManager.beginTransaction()
-                    .replace(R.id.container,Search.newInstance())
+                    .replace(R.id.container,LogoutFragment.newInstance())
+                    .commit();
+        } else if(position == 3){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, Search.newInstance())
                     .commit();
         }
 
@@ -80,7 +104,10 @@ public class MainActivity2 extends ActionBarActivity
                 mTitle = getString(R.string.title_section2);
                 break;
             case 3:
-                mTitle = "Search";
+                mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
                 break;
 
         }
@@ -117,11 +144,37 @@ public class MainActivity2 extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.menu_search) {
+
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    public void disconnectFacebookAccount(View view) {
+
+        if (Session.getActiveSession() != null) {
+            Session.getActiveSession().closeAndClearTokenInformation();
+        }
+
+        Session.setActiveSession(null);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void disconnectFacebookAccount(MenuItem item) {
+        if (Session.getActiveSession() != null) {
+            Session.getActiveSession().closeAndClearTokenInformation();
+        }
+
+        Session.setActiveSession(null);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     /**

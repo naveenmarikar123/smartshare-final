@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:rowCount="2"
+    android:columnCount="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:id="@+id/imageView"
+        android:background="#90CAF9"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/ratingBar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <com.example.naveenmarikar.smartshare1.GraphicsUtil
+        android:id="@+id/imageView_round"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+ />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Koala Bear"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:textSize="30sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:numStars="5"
+        android:rating="3"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        style="?android:attr/ratingBarStyleSmall"
+        android:isIndicator="true"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1"
+        android:id="@+id/linearLayout">
+
+        <ExpandableListView
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/expandableListView"
+            android:groupIndicator="@drawable/abc_list_selector_background_transition_holo_light"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
